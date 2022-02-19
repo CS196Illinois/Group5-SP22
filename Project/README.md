@@ -1,0 +1,1 @@
+This is the source directory for our project. All code should go in this folder.

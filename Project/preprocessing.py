@@ -59,9 +59,9 @@ def preprocess_data(obj):
     return data
 
 if __name__ == "__main__":
-    json_file = json.load(open('data/ece310.json'))
+    json_file = json.load(open('data/cs225.json'))
     transcript_data = preprocess_data(json_file)
 
     # prettyprint and save output to file
-    with open('data/exp.json', 'w') as f:
+    with open('data/exp225.json', 'w') as f:
         json.dump(transcript_data, f, indent=4)

@@ -8,20 +8,6 @@ from whoosh.analysis import StemmingAnalyzer
 
 import json
 
-#
-# Simple example indexing to an in-memory index and performing a search
-# across multiple fields and returning an array of highlighted results.
-#
-# One lacking feature of Whoosh is the no-analyze option. In this example
-# the SearchEngine modifies the given schema and adds a RAW field. When doc
-# are added to the index only stored fields in the schema are passed to Whoosh
-# along with json encoded version of the whole doc stashed in the RAW field.
-#
-# On query the <Hit> in the result is ignored and instead the RAW field is
-# decoded containing any extra fields present in the original document. 
-#
-
-
 class SearchEngine:
     def __init__(self, schema):
         self.schema = schema
@@ -54,47 +40,43 @@ class SearchEngine:
 
         return search_results
 
-if __name__ == '__main__':
 
-    docs = [
-        {
-            "id": "1",
-            "title": "First document banana",
-            "description": "This is the first document we've added in San Francisco!",
-            "tags": ['foo', 'bar'],
-            "extra": "kittens and cats"
-        },
-        {
-            "id": "2",
-            "title": "Second document hatstand",
-            "description": "The second one is even more interesting!",
-            "tags": ['alice'],
-            "extra": "foals and horses"
-        },
-        {
-            "id": "3",
-            "title": "Third document slug",
-            "description": "The third one is less interesting!",
-            "tags": ['bob'],
-            "extra": "bunny and rabbit"
-        },
-    ]
 
+def main(path_to_file: str):
     schema = Schema(
         id=ID(stored=True),
-        title=TEXT(stored=True),
-        description=TEXT(stored=True, analyzer=StemmingAnalyzer()),
-        tags=KEYWORD(stored=True)
+        sentence=TEXT(stored=True, analyzer=StemmingAnalyzer()),
+        start=NUMERIC(stored=True),
+        end=NUMERIC(stored=True)
     )
 
-    engine = SearchEngine(schema)
-    engine.index_documents(docs)
 
-    print(f"indexed {engine.get_index_size()} documents")
+    try:
 
-    fields_to_search = ["title", "description", "tags"]
+        file = open(path_to_file)
+        docs = json.loads(file.read())
+        file.close()
 
-    for q in ["hatstand", "banana", "first", "second", "alice", "bob", "san francisco"]:
-        print(f"Query:: {q}")
-        print("\t", engine.query(q, fields_to_search, highlight=True))
-        print("-"*70)
+        engine = SearchEngine(schema)
+        engine.index_documents(docs)
+
+
+
+        fields_to_search = ["sentence"]
+
+        for q in ["left child", "node"]:
+            print(f"Query:: {q}")
+            print("\t", engine.query(q, fields_to_search, highlight=True))
+            print("-"*70)
+
+
+        for idx, item in enumerate(docs):
+            item['id'] = str(idx)
+
+    except:
+        print("File not found!")
+
+
+if __name__ == "__main__":
+    main("./225.json")
+

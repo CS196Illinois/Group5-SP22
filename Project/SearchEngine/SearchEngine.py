@@ -25,7 +25,7 @@ class SearchEngine:
     def get_index_size(self) -> int:
         return self.ix.doc_count_all()
 
-    def query(self, q: str, fields: Sequence, highlight: bool=True) -> List[Dict]:
+    def query(self, q: str, fields: Sequence, highlight: bool=True, num_results: int=1) -> List[Dict]:
         search_results = []
         with self.ix.searcher() as searcher:
             results = searcher.search(MultifieldParser(fields, schema=self.schema).parse(q))
@@ -38,7 +38,7 @@ class SearchEngine:
 
                 search_results.append(d)
 
-        return search_results
+        return search_results[:num_results]
 
 
 

@@ -51,24 +51,14 @@ engine = SearchEngine(schema)
 
 
 def search(path_to_file: str, q: str, num_results: int=1):
-
-
-
     try:
-
         file = open(path_to_file)
         docs = json.loads(file.read())
         file.close()
-
         engine.index_documents(docs)
-
         fields_to_search = ["sentence"]
-        
-        print("\t", engine.query(q, fields_to_search, highlight=True, num_results=num_results))
-
-
-        for idx, item in enumerate(docs):
-            item['id'] = str(idx)
+        res = engine.query(q, fields_to_search, highlight=True, num_results=num_results)
+        return res
 
     except:
         raise FileNotFoundError("File not found")

@@ -40,15 +40,18 @@ class SearchEngine:
 
         return search_results[:num_results]
 
+schema = Schema(
+    id=ID(stored=True),
+    sentence=TEXT(stored=True, analyzer=StemmingAnalyzer()),
+    start=NUMERIC(stored=True),
+    end=NUMERIC(stored=True)
+)
+
+engine = SearchEngine(schema)
 
 
-def main(path_to_file: str):
-    schema = Schema(
-        id=ID(stored=True),
-        sentence=TEXT(stored=True, analyzer=StemmingAnalyzer()),
-        start=NUMERIC(stored=True),
-        end=NUMERIC(stored=True)
-    )
+def search(path_to_file: str, q: str, num_results: int=1):
+
 
 
     try:
@@ -57,26 +60,20 @@ def main(path_to_file: str):
         docs = json.loads(file.read())
         file.close()
 
-        engine = SearchEngine(schema)
         engine.index_documents(docs)
 
-
-
         fields_to_search = ["sentence"]
-
-        for q in ["left child", "node"]:
-            print(f"Query:: {q}")
-            print("\t", engine.query(q, fields_to_search, highlight=True))
-            print("-"*70)
+        
+        print("\t", engine.query(q, fields_to_search, highlight=True, num_results=num_results))
 
 
         for idx, item in enumerate(docs):
             item['id'] = str(idx)
 
     except:
-        print("File not found!")
+        raise FileNotFoundError("File not found")
 
 
 if __name__ == "__main__":
-    main("./225.json")
+    search("./225.json", "node", 2)
 

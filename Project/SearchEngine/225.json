@@ -1,0 +1,2702 @@
+[
+    {
+        "sentence": "Yeah.",
+        "start": 3,
+        "end": 3
+    },
+    {
+        "sentence": "Okay.",
+        "start": 3,
+        "end": 25
+    },
+    {
+        "sentence": "Welcome back to CS 225 and perhaps that overly Randy intake on forest development.",
+        "start": 25,
+        "end": 33
+    },
+    {
+        "sentence": "With that, we're going to move into trees today.",
+        "start": 32,
+        "end": 36
+    },
+    {
+        "sentence": "So we assume that you have a background we're sort of reviewing, but in part I want to call out some of the differences in how in this class we're going to talk about tree is theoretically from what you've seen before.",
+        "start": 35,
+        "end": 52
+    },
+    {
+        "sentence": "And it's because we care about moving from just a theoretical description of a tree to something we're actually going to implement.",
+        "start": 52,
+        "end": 62
+    },
+    {
+        "sentence": "It changes a couple of things.",
+        "start": 61,
+        "end": 65
+    },
+    {
+        "sentence": "So first of all, how do we define a binary tree?",
+        "start": 64,
+        "end": 70
+    },
+    {
+        "sentence": "Sort of what is our formal definition?",
+        "start": 70,
+        "end": 73
+    },
+    {
+        "sentence": "And here is where we get weird.",
+        "start": 72,
+        "end": 75
+    },
+    {
+        "sentence": "Because our formal definition of a binary tree starts out with either a binary tree is an empty tree.",
+        "start": 75,
+        "end": 97
+    },
+    {
+        "sentence": "So we are going to include when talking about theoretical data structures, the idea of the data structure with nothing in it.",
+        "start": 96,
+        "end": 107
+    },
+    {
+        "sentence": "Because that's our default construction in theory, they rarely bother talking about this.",
+        "start": 106,
+        "end": 113
+    },
+    {
+        "sentence": "But when you start talking about implementations, this empty data structure becomes really important.",
+        "start": 112,
+        "end": 120
+    },
+    {
+        "sentence": "And this is going to change also how we think of termination and a bunch of details are going to propagate from that.",
+        "start": 119,
+        "end": 128
+    },
+    {
+        "sentence": "Our tree is either an empty tree or we're, so it's either an empty tree and we're okay with writing it like that.",
+        "start": 127,
+        "end": 163
+    },
+    {
+        "sentence": "We will sometimes write it as the empty brackets.",
+        "start": 163,
+        "end": 166
+    },
+    {
+        "sentence": "We will sometimes write it as the empty set.",
+        "start": 166,
+        "end": 170
+    },
+    {
+        "sentence": "Or it is a route with a left subtree and a right sub tree, both of which are binary trees.",
+        "start": 170,
+        "end": 183
+    },
+    {
+        "sentence": "I've now defined every possible binary tree.",
+        "start": 183,
+        "end": 189
+    },
+    {
+        "sentence": "Not really exciting.",
+        "start": 188,
+        "end": 191
+    },
+    {
+        "sentence": "But as I said, this starting with the root being empty fundamentally changes the way we write our theoretical descriptions.",
+        "start": 191,
+        "end": 200
+    },
+    {
+        "sentence": "Okay?",
+        "start": 199,
+        "end": 202
+    },
+    {
+        "sentence": "So with this, we have the next part that's going to bother a lot of the mathematicians in the world, which is our informal definition of a tree is height is the length of the longest path from the root to a leaf that everyone's happy with, right?",
+        "start": 201,
+        "end": 222
+    },
+    {
+        "sentence": "But here we start to have a problem when we want to define it formally.",
+        "start": 221,
+        "end": 232
+    },
+    {
+        "sentence": "So how are we going to define it formally?",
+        "start": 231,
+        "end": 238
+    },
+    {
+        "sentence": "What we're going to define it as a recursive function.",
+        "start": 237,
+        "end": 243
+    },
+    {
+        "sentence": "So write the height of a binary tree T is going to be the max of height of TL or E.",
+        "start": 242,
+        "end": 268
+    },
+    {
+        "sentence": "I.",
+        "start": 267,
+        "end": 271
+    },
+    {
+        "sentence": "T are.",
+        "start": 270,
+        "end": 273
+    },
+    {
+        "sentence": "My brain gets ahead of my writing.",
+        "start": 273,
+        "end": 277
+    },
+    {
+        "sentence": "Was one.",
+        "start": 277,
+        "end": 281
+    },
+    {
+        "sentence": "So there's our recursive function.",
+        "start": 280,
+        "end": 285
+    },
+    {
+        "sentence": "That one looks familiar probably if you think about how it was going to end up.",
+        "start": 285,
+        "end": 289
+    },
+    {
+        "sentence": "And what is our base case though?",
+        "start": 289,
+        "end": 293
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 293,
+        "end": 296
+    },
+    {
+        "sentence": "If it's equal to root, well, then what is the solution for an empty tree?",
+        "start": 296,
+        "end": 304
+    },
+    {
+        "sentence": "Because since an empty tree is a valid tree, I need to be able to put an empty tree into this function.",
+        "start": 304,
+        "end": 312
+    },
+    {
+        "sentence": "So HA, here is where it gets weird, right?",
+        "start": 311,
+        "end": 319
+    },
+    {
+        "sentence": "So it is height of an empty tree equals watts or.",
+        "start": 318,
+        "end": 328
+    },
+    {
+        "sentence": "So for this to work out and match by informal description.",
+        "start": 327,
+        "end": 335
+    },
+    {
+        "sentence": "What is that going to tell me the height of my empty tree is?",
+        "start": 334,
+        "end": 338
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 338,
+        "end": 341
+    },
+    {
+        "sentence": "Yeah, It's negative one.",
+        "start": 340,
+        "end": 344
+    },
+    {
+        "sentence": "And man, this drive some theoreticians not because what does a negative height mean?",
+        "start": 343,
+        "end": 352
+    },
+    {
+        "sentence": "Well, a negative height means you've got an empty tree.",
+        "start": 351,
+        "end": 354
+    },
+    {
+        "sentence": "So does it work?",
+        "start": 353,
+        "end": 359
+    },
+    {
+        "sentence": "Well, we have here, What's the height of this?",
+        "start": 358,
+        "end": 363
+    },
+    {
+        "sentence": "We call recursively down.",
+        "start": 363,
+        "end": 365
+    },
+    {
+        "sentence": "What's the height of x?",
+        "start": 365,
+        "end": 367
+    },
+    {
+        "sentence": "We call recursively down.",
+        "start": 366,
+        "end": 368
+    },
+    {
+        "sentence": "And we get x has two children with height negative one, x on the recursion back up then the height of x, the subtree rooted at x is 0.",
+        "start": 368,
+        "end": 379
+    },
+    {
+        "sentence": "We have to do the left.",
+        "start": 378,
+        "end": 381
+    },
+    {
+        "sentence": "Again.",
+        "start": 380,
+        "end": 383
+    },
+    {
+        "sentence": "We get negative one, negative one, negative one, negative one, all down here.",
+        "start": 382,
+        "end": 387
+    },
+    {
+        "sentence": "000123.",
+        "start": 386,
+        "end": 395
+    },
+    {
+        "sentence": "So it does work out correctly.",
+        "start": 388,
+        "end": 398
+    },
+    {
+        "sentence": "You just have to accept that the height of an empty tree is negative one y.",
+        "start": 397,
+        "end": 405
+    },
+    {
+        "sentence": "Because then the math works out.",
+        "start": 405,
+        "end": 408
+    },
+    {
+        "sentence": "Turns out a lot of math functionally is defined that same way that when they were mathematicians figuring out how math needed to work, they chose it to work in ways that made everything consistent.",
+        "start": 408,
+        "end": 422
+    },
+    {
+        "sentence": "Yes.",
+        "start": 421,
+        "end": 422
+    },
+    {
+        "sentence": "The negative one is the height of the left and right empty subtree of those nodes.",
+        "start": 422,
+        "end": 433
+    },
+    {
+        "sentence": "So I'm counting, I'm marking it, each tree, its height.",
+        "start": 432,
+        "end": 438
+    },
+    {
+        "sentence": "And there are eight empty trees that are subtrees of this tree.",
+        "start": 438,
+        "end": 444
+    },
+    {
+        "sentence": "Okay?",
+        "start": 443,
+        "end": 447
+    },
+    {
+        "sentence": "So there is our binary tree.",
+        "start": 447,
+        "end": 452
+    },
+    {
+        "sentence": "Given a treaty.",
+        "start": 452,
+        "end": 457
+    },
+    {
+        "sentence": "We have our base case, which matches our base case from our tree definition or binary tree.",
+        "start": 456,
+        "end": 464
+    },
+    {
+        "sentence": "And we have a recursive one that calls out the two most straightforward.",
+        "start": 464,
+        "end": 469
+    },
+    {
+        "sentence": "So yeah, okay, that's nice.",
+        "start": 468,
+        "end": 474
+    },
+    {
+        "sentence": "How do we write a full tree?",
+        "start": 473,
+        "end": 477
+    },
+    {
+        "sentence": "Well, again, I have two cases.",
+        "start": 476,
+        "end": 480
+    },
+    {
+        "sentence": "Anyone want to give me one of them?",
+        "start": 480,
+        "end": 483
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 482,
+        "end": 485
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 485,
+        "end": 487
+    },
+    {
+        "sentence": "Full tree can be an empty tree.",
+        "start": 486,
+        "end": 489
+    },
+    {
+        "sentence": "Remember going to see this a lot, right?",
+        "start": 488,
+        "end": 493
+    },
+    {
+        "sentence": "Or a full tree is F equals r comma f L, F R.",
+        "start": 493,
+        "end": 507
+    },
+    {
+        "sentence": "And what else do I need?",
+        "start": 507,
+        "end": 510
+    },
+    {
+        "sentence": "So what else do I need to make this full?",
+        "start": 509,
+        "end": 517
+    },
+    {
+        "sentence": "I just have a drawing here, but you should have seen full before.",
+        "start": 517,
+        "end": 522
+    },
+    {
+        "sentence": "And a full says, either we have 0 or airy in the case of binary, two children, right?",
+        "start": 521,
+        "end": 538
+    },
+    {
+        "sentence": "Either we're a leaf or we are not relief.",
+        "start": 538,
+        "end": 543
+    },
+    {
+        "sentence": "Either we have two children or no children.",
+        "start": 542,
+        "end": 547
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 547,
+        "end": 549
+    },
+    {
+        "sentence": "So either f and f are are empty or they are both full trees?",
+        "start": 549,
+        "end": 571
+    },
+    {
+        "sentence": "That are not empty.",
+        "start": 570,
+        "end": 577
+    },
+    {
+        "sentence": "Okay?",
+        "start": 577,
+        "end": 584
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 584,
+        "end": 588
+    },
+    {
+        "sentence": "Well, a full tree.",
+        "start": 587,
+        "end": 602
+    },
+    {
+        "sentence": "An empty tree is a full tree.",
+        "start": 601,
+        "end": 606
+    },
+    {
+        "sentence": "I want to say that they are both MPT.",
+        "start": 605,
+        "end": 614
+    },
+    {
+        "sentence": "I'm not, I'm not sure I see the condensed.",
+        "start": 613,
+        "end": 616
+    },
+    {
+        "sentence": "It may be condense Abl.",
+        "start": 615,
+        "end": 617
+    },
+    {
+        "sentence": "My goal here is not minimum words.",
+        "start": 617,
+        "end": 620
+    },
+    {
+        "sentence": "Yep.",
+        "start": 619,
+        "end": 626
+    },
+    {
+        "sentence": "A single node is a tree of height 0 that contains one node.",
+        "start": 626,
+        "end": 635
+    },
+    {
+        "sentence": "It is not an empty tree.",
+        "start": 634,
+        "end": 636
+    },
+    {
+        "sentence": "That is absolutely correct.",
+        "start": 635,
+        "end": 638
+    },
+    {
+        "sentence": "Okay?",
+        "start": 638,
+        "end": 641
+    },
+    {
+        "sentence": "So foal, again, the emptiness makes it a little bit clumsy in this case.",
+        "start": 641,
+        "end": 648
+    },
+    {
+        "sentence": "And perfect, a perfect tree.",
+        "start": 648,
+        "end": 653
+    },
+    {
+        "sentence": "We're going to change the way we defined it so far we've been defining trees in a clear way.",
+        "start": 652,
+        "end": 659
+    },
+    {
+        "sentence": "We still have that empty tree.",
+        "start": 659,
+        "end": 661
+    },
+    {
+        "sentence": "A perfect tree is either empty.",
+        "start": 660,
+        "end": 663
+    },
+    {
+        "sentence": "Yeah, okay, that's fine.",
+        "start": 663,
+        "end": 665
+    },
+    {
+        "sentence": "But otherwise, we want to define a perfect tree.",
+        "start": 665,
+        "end": 672
+    },
+    {
+        "sentence": "Is a perfect tree of height.",
+        "start": 672,
+        "end": 680
+    },
+    {
+        "sentence": "H is if h equals 0, equals minus 1, then it's empty.",
+        "start": 680,
+        "end": 699
+    },
+    {
+        "sentence": "So we had to change because we want to be talking about trees of height h otherwise.",
+        "start": 698,
+        "end": 710
+    },
+    {
+        "sentence": "Or fig tree of height h equals a root plus a perfect tree of height h minus one, and a perfect tree of height h minus 2, 1.",
+        "start": 709,
+        "end": 725
+    },
+    {
+        "sentence": "There's our perfect tree.",
+        "start": 724,
+        "end": 731
+    },
+    {
+        "sentence": "All right?",
+        "start": 730,
+        "end": 735
+    },
+    {
+        "sentence": "So this constraint now is working on the height of the tree is what we're using as our constraint to build the tree.",
+        "start": 735,
+        "end": 745
+    },
+    {
+        "sentence": "And this feels like the cleanest way to describe a perfect tree.",
+        "start": 745,
+        "end": 749
+    },
+    {
+        "sentence": "Because there is exactly in a real sense, one perfect tree structurally of any given height.",
+        "start": 749,
+        "end": 756
+    },
+    {
+        "sentence": "That at every height, the perfect trees look the same.",
+        "start": 756,
+        "end": 763
+    },
+    {
+        "sentence": "O, a perfect tree is the tree we all wish we were.",
+        "start": 763,
+        "end": 769
+    },
+    {
+        "sentence": "Because it basically has all the properties we want in a tree.",
+        "start": 769,
+        "end": 773
+    },
+    {
+        "sentence": "And we're going to find that actually over time, we can't get perfect trees because what are, what are the limitations that arise from perfect trees?",
+        "start": 773,
+        "end": 783
+    },
+    {
+        "sentence": "Can I have a perfect tree with three vertices, with three nodes?",
+        "start": 782,
+        "end": 788
+    },
+    {
+        "sentence": "Three works right?",
+        "start": 788,
+        "end": 794
+    },
+    {
+        "sentence": "Okay?",
+        "start": 793,
+        "end": 795
+    },
+    {
+        "sentence": "What about for?",
+        "start": 794,
+        "end": 797
+    },
+    {
+        "sentence": "Oh, I can't build a perfect tree with four nodes.",
+        "start": 796,
+        "end": 803
+    },
+    {
+        "sentence": "So if I want to store data in my tree and I'm inserting data one at a time, I can go 0, that's fine.",
+        "start": 803,
+        "end": 812
+    },
+    {
+        "sentence": "One that's fine too as a problem actually already, right?",
+        "start": 812,
+        "end": 818
+    },
+    {
+        "sentence": "Because when I put that second node, what do I do?",
+        "start": 818,
+        "end": 821
+    },
+    {
+        "sentence": "I can't have a perfect tree.",
+        "start": 820,
+        "end": 823
+    },
+    {
+        "sentence": "So there's only certain amounts of data I can install in a tree data structure that requires it to be perfect.",
+        "start": 822,
+        "end": 833
+    },
+    {
+        "sentence": "So that's a real problem.",
+        "start": 832,
+        "end": 835
+    },
+    {
+        "sentence": "So we're not going to see perfect much, but it is the ideal we would like our trees to be.",
+        "start": 835,
+        "end": 843
+    },
+    {
+        "sentence": "In most cases, at least in most binary tree cases.",
+        "start": 843,
+        "end": 848
+    },
+    {
+        "sentence": "But we have something close to perfect.",
+        "start": 847,
+        "end": 851
+    },
+    {
+        "sentence": "We have complete.",
+        "start": 851,
+        "end": 855
+    },
+    {
+        "sentence": "So what is complete?",
+        "start": 854,
+        "end": 858
+    },
+    {
+        "sentence": "A complete tree is conceptually a perfect tree up until the last level.",
+        "start": 857,
+        "end": 867
+    },
+    {
+        "sentence": "And the last level is pushed all to the left.",
+        "start": 866,
+        "end": 871
+    },
+    {
+        "sentence": "So I can informally define it like that.",
+        "start": 871,
+        "end": 879
+    },
+    {
+        "sentence": "And that's enough to get me a tree description that again has one structure for any particular number of nodes.",
+        "start": 879,
+        "end": 888
+    },
+    {
+        "sentence": "Much like a perfect tree.",
+        "start": 888,
+        "end": 890
+    },
+    {
+        "sentence": "I can have a complete tree with four nodes.",
+        "start": 890,
+        "end": 894
+    },
+    {
+        "sentence": "I can have a complete tree with two nodes.",
+        "start": 894,
+        "end": 897
+    },
+    {
+        "sentence": "Okay?",
+        "start": 897,
+        "end": 899
+    },
+    {
+        "sentence": "That makes sense.",
+        "start": 898,
+        "end": 900
+    },
+    {
+        "sentence": "So let's try to do our, our, our recursive definition of this.",
+        "start": 900,
+        "end": 907
+    },
+    {
+        "sentence": "So recursively, again, a complete tree is going to be defined under a height.",
+        "start": 906,
+        "end": 914
+    },
+    {
+        "sentence": "And a complete tree of height minus one is equal to the empty set.",
+        "start": 914,
+        "end": 920
+    },
+    {
+        "sentence": "Okay?",
+        "start": 920,
+        "end": 922
+    },
+    {
+        "sentence": "Unsurprising.",
+        "start": 921,
+        "end": 924
+    },
+    {
+        "sentence": "Or if the height is greater than 0.",
+        "start": 923,
+        "end": 930
+    },
+    {
+        "sentence": "So this should really be, we also kind of need a height complete tree, as we wrote it here, of height 0 equals root.",
+        "start": 929,
+        "end": 944
+    },
+    {
+        "sentence": "Now we don't even need this, we just need greater than negative one.",
+        "start": 944,
+        "end": 949
+    },
+    {
+        "sentence": "It did it right the first time and okay.",
+        "start": 949,
+        "end": 952
+    },
+    {
+        "sentence": "Greater than minus one.",
+        "start": 951,
+        "end": 954
+    },
+    {
+        "sentence": "Or let's prefer the easier way to fix this of greater than or equal to 0.",
+        "start": 954,
+        "end": 960
+    },
+    {
+        "sentence": "What does it look like?",
+        "start": 959,
+        "end": 962
+    },
+    {
+        "sentence": "Well, then I have two choices.",
+        "start": 961,
+        "end": 970
+    },
+    {
+        "sentence": "Let's see.",
+        "start": 969,
+        "end": 972
+    },
+    {
+        "sentence": "What if my left subtree is a here, right?",
+        "start": 971,
+        "end": 982
+    },
+    {
+        "sentence": "I've got my drawing.",
+        "start": 982,
+        "end": 983
+    },
+    {
+        "sentence": "My left subtree is, is it perfect?",
+        "start": 983,
+        "end": 987
+    },
+    {
+        "sentence": "It's complete, right, though.",
+        "start": 986,
+        "end": 991
+    },
+    {
+        "sentence": "So it can be a complete tree of height.",
+        "start": 990,
+        "end": 998
+    },
+    {
+        "sentence": "What?",
+        "start": 997,
+        "end": 999
+    },
+    {
+        "sentence": "H minus one?",
+        "start": 998,
+        "end": 1004
+    },
+    {
+        "sentence": "Okay?",
+        "start": 1003,
+        "end": 1007
+    },
+    {
+        "sentence": "One of them has to be h minus one, right?",
+        "start": 1006,
+        "end": 1010
+    },
+    {
+        "sentence": "But what about my right subtree?",
+        "start": 1010,
+        "end": 1013
+    },
+    {
+        "sentence": "What about my right subtree?",
+        "start": 1012,
+        "end": 1015
+    },
+    {
+        "sentence": "What kind of tree is that?",
+        "start": 1015,
+        "end": 1017
+    },
+    {
+        "sentence": "Yeah, I agree my right subtree has a height of h minus two.",
+        "start": 1016,
+        "end": 1026
+    },
+    {
+        "sentence": "That's one thing we've noted.",
+        "start": 1026,
+        "end": 1027
+    },
+    {
+        "sentence": "Yes, it's perfect.",
+        "start": 1027,
+        "end": 1032
+    },
+    {
+        "sentence": "So if my left subtree is only complete, then to be complete, my right sub-tree have to be a perfect tree.",
+        "start": 1031,
+        "end": 1044
+    },
+    {
+        "sentence": "And it has to be of h minus 2.",
+        "start": 1043,
+        "end": 1048
+    },
+    {
+        "sentence": "Yes.",
+        "start": 1047,
+        "end": 1050
+    },
+    {
+        "sentence": "If it was c of h, then the whole tree would have a height of c of h plus 1, right?",
+        "start": 1050,
+        "end": 1064
+    },
+    {
+        "sentence": "Because my left subtree is a sub-tree of a root.",
+        "start": 1064,
+        "end": 1070
+    },
+    {
+        "sentence": "So when I did the height calculation, my height calculation would end up being that my height was the height of my left plus one.",
+        "start": 1070,
+        "end": 1082
+    },
+    {
+        "sentence": "And if it was c of h, my height would be h plus 1.",
+        "start": 1081,
+        "end": 1087
+    },
+    {
+        "sentence": "That clear, right?",
+        "start": 1087,
+        "end": 1090
+    },
+    {
+        "sentence": "Because every time I'm going up, I'm adding one height.",
+        "start": 1090,
+        "end": 1093
+    },
+    {
+        "sentence": "And since there is a route above this, so this is TL and T are.",
+        "start": 1092,
+        "end": 1102
+    },
+    {
+        "sentence": "Got it.",
+        "start": 1101,
+        "end": 1104
+    },
+    {
+        "sentence": "Okay.",
+        "start": 1104,
+        "end": 1107
+    },
+    {
+        "sentence": "So that got that.",
+        "start": 1106,
+        "end": 1109
+    },
+    {
+        "sentence": "What's the other case I could have.",
+        "start": 1109,
+        "end": 1111
+    },
+    {
+        "sentence": "So let's think about one of them that shows up.",
+        "start": 1111,
+        "end": 1119
+    },
+    {
+        "sentence": "So what about that?",
+        "start": 1119,
+        "end": 1124
+    },
+    {
+        "sentence": "Right?",
+        "start": 1123,
+        "end": 1125
+    },
+    {
+        "sentence": "So if this, if T2 has two sub children, how would, what would my tree look like?",
+        "start": 1125,
+        "end": 1133
+    },
+    {
+        "sentence": "Too perfect trees?",
+        "start": 1132,
+        "end": 1138
+    },
+    {
+        "sentence": "It is.",
+        "start": 1138,
+        "end": 1139
+    },
+    {
+        "sentence": "Do I need a new rule to define this?",
+        "start": 1138,
+        "end": 1142
+    },
+    {
+        "sentence": "For the what?",
+        "start": 1142,
+        "end": 1154
+    },
+    {
+        "sentence": "Well, that's what we've odd.",
+        "start": 1153,
+        "end": 1160
+    },
+    {
+        "sentence": "So you think I need another rule but is a perfect tree always a complete tree?",
+        "start": 1159,
+        "end": 1166
+    },
+    {
+        "sentence": "I haven't gone through the formal definition.",
+        "start": 1166,
+        "end": 1170
+    },
+    {
+        "sentence": "Yeah, So I can slot T L here, which is a perfect tree of h minus 1 into this rule.",
+        "start": 1169,
+        "end": 1182
+    },
+    {
+        "sentence": "So I think I don't need a new rule yet.",
+        "start": 1182,
+        "end": 1186
+    },
+    {
+        "sentence": "Right?",
+        "start": 1185,
+        "end": 1187
+    },
+    {
+        "sentence": "What if I now go, oh, well, too here has a left child.",
+        "start": 1187,
+        "end": 1197
+    },
+    {
+        "sentence": "Now, the height of TR is the same as the height of T L.",
+        "start": 1197,
+        "end": 1204
+    },
+    {
+        "sentence": "So no longer can I use the rule that I was using, right.",
+        "start": 1204,
+        "end": 1209
+    },
+    {
+        "sentence": "So now I need a new rule where the heights of both of my children are the same.",
+        "start": 1208,
+        "end": 1216
+    },
+    {
+        "sentence": "Well, clearly we can see that this one now has a height the same, and it's no longer perfect.",
+        "start": 1216,
+        "end": 1225
+    },
+    {
+        "sentence": "So this is a complete of height minus one.",
+        "start": 1224,
+        "end": 1230
+    },
+    {
+        "sentence": "And now what has to be true of my left subtree?",
+        "start": 1229,
+        "end": 1235
+    },
+    {
+        "sentence": "It has to be perfect, right?",
+        "start": 1234,
+        "end": 1240
+    },
+    {
+        "sentence": "Because for anything do have appeared at the bottom level of my right subtree.",
+        "start": 1240,
+        "end": 1245
+    },
+    {
+        "sentence": "The whole bottom level, my left subtree had to be filled, which made it perfect.",
+        "start": 1245,
+        "end": 1250
+    },
+    {
+        "sentence": "So this is all I need.",
+        "start": 1250,
+        "end": 1258
+    },
+    {
+        "sentence": "Because a complete tree, sorry, a perfect tree is a complete tree.",
+        "start": 1257,
+        "end": 1265
+    },
+    {
+        "sentence": "But a complete tree is not a perfect tree or at least not required to be.",
+        "start": 1264,
+        "end": 1270
+    },
+    {
+        "sentence": "But that does it, right?",
+        "start": 1270,
+        "end": 1273
+    },
+    {
+        "sentence": "Yes.",
+        "start": 1272,
+        "end": 1273
+    },
+    {
+        "sentence": "To the to the yeah.",
+        "start": 1273,
+        "end": 1290
+    },
+    {
+        "sentence": "Okay.",
+        "start": 1289,
+        "end": 1293
+    },
+    {
+        "sentence": "If I if I get so, I just have one left-child of the second node in the left subtree.",
+        "start": 1293,
+        "end": 1300
+    },
+    {
+        "sentence": "That is then the left subtree is still height h minus one, right?",
+        "start": 1299,
+        "end": 1305
+    },
+    {
+        "sentence": "And it is still complete.",
+        "start": 1305,
+        "end": 1308
+    },
+    {
+        "sentence": "Its complete not full.",
+        "start": 1308,
+        "end": 1315
+    },
+    {
+        "sentence": "Complete is what we are working on writing the definition of the informal definition of complete is a perfect tree up until level h or h minus 1.",
+        "start": 1314,
+        "end": 1330
+    },
+    {
+        "sentence": "So it's perfect Up until it's the perfect at the root.",
+        "start": 1329,
+        "end": 1333
+    },
+    {
+        "sentence": "The children the children's children.",
+        "start": 1333,
+        "end": 1335
+    },
+    {
+        "sentence": "It's not perfect to the bottom.",
+        "start": 1335,
+        "end": 1337
+    },
+    {
+        "sentence": "And then shoved all the way to the left at the bottom.",
+        "start": 1336,
+        "end": 1339
+    },
+    {
+        "sentence": "Got it.",
+        "start": 1339,
+        "end": 1341
+    },
+    {
+        "sentence": "Okay.",
+        "start": 1341,
+        "end": 1342
+    },
+    {
+        "sentence": "Complete and full, man, they're so easy to flip-flop.",
+        "start": 1342,
+        "end": 1346
+    },
+    {
+        "sentence": "I have done that many times in my life.",
+        "start": 1346,
+        "end": 1349
+    },
+    {
+        "sentence": "Okay.",
+        "start": 1348,
+        "end": 1351
+    },
+    {
+        "sentence": "So is everybody happy with this now as our definition for a complete tree?",
+        "start": 1351,
+        "end": 1358
+    },
+    {
+        "sentence": "This one we're going to actually use.",
+        "start": 1357,
+        "end": 1361
+    },
+    {
+        "sentence": "We're going to have data structures that are actually complete trees.",
+        "start": 1360,
+        "end": 1365
+    },
+    {
+        "sentence": "And that we hold the property that they need to stay a complete tree.",
+        "start": 1365,
+        "end": 1370
+    },
+    {
+        "sentence": "And it's pretty cool because it actually gives us some amazing properties about how we can store it.",
+        "start": 1369,
+        "end": 1376
+    },
+    {
+        "sentence": "A lot of them are true of a perfect tree, but as we saw, a perfect tree has the disadvantage.",
+        "start": 1376,
+        "end": 1382
+    },
+    {
+        "sentence": "I can only have a fixed number of nodes in my perfect tree.",
+        "start": 1382,
+        "end": 1386
+    },
+    {
+        "sentence": "Okay?",
+        "start": 1386,
+        "end": 1388
+    },
+    {
+        "sentence": "And if a second set of slides, I will have to trim this to not have duplicates.",
+        "start": 1388,
+        "end": 1401
+    },
+    {
+        "sentence": "Okay, so that's the theoretical.",
+        "start": 1400,
+        "end": 1405
+    },
+    {
+        "sentence": "Now let's try and work through to the idea of the minimal abstract data type.",
+        "start": 1404,
+        "end": 1412
+    },
+    {
+        "sentence": "For a tree.",
+        "start": 1411,
+        "end": 1413
+    },
+    {
+        "sentence": "What must a tree be able to do?",
+        "start": 1413,
+        "end": 1417
+    },
+    {
+        "sentence": "Well, we need to be able to insert.",
+        "start": 1416,
+        "end": 1421
+    },
+    {
+        "sentence": "We need to add things to the tree.",
+        "start": 1421,
+        "end": 1423
+    },
+    {
+        "sentence": "So we have insert.",
+        "start": 1423,
+        "end": 1426
+    },
+    {
+        "sentence": "And minimally, we just have to be able to put it in the tree.",
+        "start": 1425,
+        "end": 1432
+    },
+    {
+        "sentence": "We're going to find that in practice, insert is going to have lots of other properties.",
+        "start": 1432,
+        "end": 1438
+    },
+    {
+        "sentence": "But there has to be some way to put things in our tree.",
+        "start": 1437,
+        "end": 1441
+    },
+    {
+        "sentence": "In general, we're going to find that we want to remove things from our tree.",
+        "start": 1441,
+        "end": 1449
+    },
+    {
+        "sentence": "And the exact implementation of both of these is going to get complicated, right?",
+        "start": 1448,
+        "end": 1462
+    },
+    {
+        "sentence": "We may want to remove something at a location, the tree, we may want to remove something based on a property.",
+        "start": 1462,
+        "end": 1468
+    },
+    {
+        "sentence": "We may want to, we inserted a location.",
+        "start": 1468,
+        "end": 1471
+    },
+    {
+        "sentence": "We may just want to insert into the data structured.",
+        "start": 1470,
+        "end": 1473
+    },
+    {
+        "sentence": "And as I said, we have about seven weeks to talk about the different ways we're going to implement those.",
+        "start": 1473,
+        "end": 1481
+    },
+    {
+        "sentence": "But there's one other thing.",
+        "start": 1480,
+        "end": 1483
+    },
+    {
+        "sentence": "We did, iterators, right?",
+        "start": 1482,
+        "end": 1485
+    },
+    {
+        "sentence": "And I talked about that a list was fairly straightforward how to iterate.",
+        "start": 1485,
+        "end": 1491
+    },
+    {
+        "sentence": "And you're implementing an iterator for a list.",
+        "start": 1490,
+        "end": 1494
+    },
+    {
+        "sentence": "But how do I iterate over a tree?",
+        "start": 1494,
+        "end": 1498
+    },
+    {
+        "sentence": "So the concept of iterating over the tree is important.",
+        "start": 1498,
+        "end": 1506
+    },
+    {
+        "sentence": "We're going to want to get all of the data out of the tree somehow.",
+        "start": 1505,
+        "end": 1510
+    },
+    {
+        "sentence": "But there are many different ways we could choose to do that.",
+        "start": 1509,
+        "end": 1513
+    },
+    {
+        "sentence": "And because of that, we're going to define what we call a traversal.",
+        "start": 1513,
+        "end": 1521
+    },
+    {
+        "sentence": "And a traversal is going to follow the structure of the tree in some way and visit all of the nodes in the tree.",
+        "start": 1520,
+        "end": 1535
+    },
+    {
+        "sentence": "And we're going to see several different kinds of traversal.",
+        "start": 1534,
+        "end": 1540
+    },
+    {
+        "sentence": "And we're going to see how traversals and searching a tree are tightly coupled, that they're the same concept.",
+        "start": 1539,
+        "end": 1548
+    },
+    {
+        "sentence": "And that's one of the things you're going to work on next.",
+        "start": 1547,
+        "end": 1552
+    },
+    {
+        "sentence": "And then we have to be able to create an empty one and maybe ask is it empty?",
+        "start": 1551,
+        "end": 1557
+    },
+    {
+        "sentence": "And that's kind of it.",
+        "start": 1556,
+        "end": 1559
+    },
+    {
+        "sentence": "Here, our most abstract datatype starts to drift a bit.",
+        "start": 1558,
+        "end": 1563
+    },
+    {
+        "sentence": "That if we talk about the category of all trees, well, trees are used for very specific purposes so that it's just a tree is not enough to really nail down our abstract data type.",
+        "start": 1563,
+        "end": 1580
+    },
+    {
+        "sentence": "We're going to nail down the datatype more as we see applications for trees.",
+        "start": 1579,
+        "end": 1586
+    },
+    {
+        "sentence": "Okay?",
+        "start": 1585,
+        "end": 1588
+    },
+    {
+        "sentence": "So how are we going to implement a tree?",
+        "start": 1588,
+        "end": 1595
+    },
+    {
+        "sentence": "Well, we have all that public interface plus whatever other interesting public interface.",
+        "start": 1594,
+        "end": 1600
+    },
+    {
+        "sentence": "What do I need to do?",
+        "start": 1599,
+        "end": 1602
+    },
+    {
+        "sentence": "Store, to store my tree.",
+        "start": 1601,
+        "end": 1605
+    },
+    {
+        "sentence": "I'm again going to template it because what I'm storing in my tree nodes can vary.",
+        "start": 1605,
+        "end": 1614
+    },
+    {
+        "sentence": "And I might want to be able to store different kinds of things with the same structure.",
+        "start": 1614,
+        "end": 1619
+    },
+    {
+        "sentence": "But hmm, I bet I gave a bit of it away.",
+        "start": 1618,
+        "end": 1624
+    },
+    {
+        "sentence": "I need a tree node, right?",
+        "start": 1624,
+        "end": 1625
+    },
+    {
+        "sentence": "So much like I had a list node, I'm going to need a TreeNode.",
+        "start": 1625,
+        "end": 1631
+    },
+    {
+        "sentence": "So again, struct TreeNode.",
+        "start": 1630,
+        "end": 1637
+    },
+    {
+        "sentence": "It's going to have to store the data.",
+        "start": 1636,
+        "end": 1648
+    },
+    {
+        "sentence": "And a tree node, it's just going to store one element, right?",
+        "start": 1647,
+        "end": 1652
+    },
+    {
+        "sentence": "In our traditional implementation.",
+        "start": 1651,
+        "end": 1655
+    },
+    {
+        "sentence": "And then we have tree node pointer, left, TreeNode pointer, right?",
+        "start": 1654,
+        "end": 1671
+    },
+    {
+        "sentence": "Okay.",
+        "start": 1670,
+        "end": 1674
+    },
+    {
+        "sentence": "So there is harmony to build the structure of my tree, at least my traditional tree.",
+        "start": 1673,
+        "end": 1682
+    },
+    {
+        "sentence": "And I need one more thing, right?",
+        "start": 1682,
+        "end": 1685
+    },
+    {
+        "sentence": "I need a root.",
+        "start": 1685,
+        "end": 1689
+    },
+    {
+        "sentence": "And here we'll see how I get sort of sloppy, but follow the way most people do.",
+        "start": 1689,
+        "end": 1704
+    },
+    {
+        "sentence": "I M bothering to follow the style guide on route.",
+        "start": 1704,
+        "end": 1707
+    },
+    {
+        "sentence": "I am not on my TreeNode.",
+        "start": 1707,
+        "end": 1710
+    },
+    {
+        "sentence": "It's a structure.",
+        "start": 1709,
+        "end": 1711
+    },
+    {
+        "sentence": "It's exposing all of its stuff.",
+        "start": 1710,
+        "end": 1713
+    },
+    {
+        "sentence": "It's really more like a container than a class.",
+        "start": 1713,
+        "end": 1716
+    },
+    {
+        "sentence": "Though.",
+        "start": 1716,
+        "end": 1717
+    },
+    {
+        "sentence": "I could write any member functions for it I want.",
+        "start": 1717,
+        "end": 1720
+    },
+    {
+        "sentence": "So here is how I would approach a general binary tree if I knew nothing else about it.",
+        "start": 1720,
+        "end": 1728
+    },
+    {
+        "sentence": "Right?",
+        "start": 1728,
+        "end": 1730
+    },
+    {
+        "sentence": "We're going to have a constructor.",
+        "start": 1730,
+        "end": 1733
+    },
+    {
+        "sentence": "What's the default constructor going to do?",
+        "start": 1732,
+        "end": 1735
+    },
+    {
+        "sentence": "Any guesses?",
+        "start": 1735,
+        "end": 1737
+    },
+    {
+        "sentence": "Yeah, it's going to assign null to the root.",
+        "start": 1736,
+        "end": 1742
+    },
+    {
+        "sentence": "Absolutely.",
+        "start": 1742,
+        "end": 1745
+    },
+    {
+        "sentence": "That's it.",
+        "start": 1744,
+        "end": 1745
+    },
+    {
+        "sentence": "That's all we gotta do.",
+        "start": 1745,
+        "end": 1746
+    },
+    {
+        "sentence": "What I do, Insert, I'm going to have to figure out where to put it.",
+        "start": 1746,
+        "end": 1750
+    },
+    {
+        "sentence": "We'll talk about that a bit more later.",
+        "start": 1750,
+        "end": 1752
+    },
+    {
+        "sentence": "But I'm going to use due to allocate a new node and stick it on the root.",
+        "start": 1751,
+        "end": 1758
+    },
+    {
+        "sentence": "And then when I go away, I'm going to need something like that traversal, aren't I?",
+        "start": 1758,
+        "end": 1763
+    },
+    {
+        "sentence": "Because I'm going to need to remove all the nodes.",
+        "start": 1763,
+        "end": 1765
+    },
+    {
+        "sentence": "One of my destructor.",
+        "start": 1765,
+        "end": 1767
+    },
+    {
+        "sentence": "So unfortunately, we can't go off this tree as a rule of 0 class and we're going to meet a real constructor and a real destructor.",
+        "start": 1767,
+        "end": 1778
+    },
+    {
+        "sentence": "And we're going to have to think about them.",
+        "start": 1777,
+        "end": 1779
+    },
+    {
+        "sentence": "And what I make a copy.",
+        "start": 1779,
+        "end": 1782
+    },
+    {
+        "sentence": "Again, I'm going to need that traversal somehow.",
+        "start": 1781,
+        "end": 1785
+    },
+    {
+        "sentence": "I'm going to need to copy all of the nodes.",
+        "start": 1784,
+        "end": 1787
+    },
+    {
+        "sentence": "Is everybody comfortable with this as my concrete implementation of a fairly abstract binary tree?",
+        "start": 1787,
+        "end": 1799
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 1799,
+        "end": 1800
+    },
+    {
+        "sentence": "Is there a reason why I make the tree notice struct rather than a class.",
+        "start": 1800,
+        "end": 1807
+    },
+    {
+        "sentence": "That's a good question.",
+        "start": 1807,
+        "end": 1808
+    },
+    {
+        "sentence": "The answer for me is that since it is just a container that I don't want to really do anything with it.",
+        "start": 1808,
+        "end": 1815
+    },
+    {
+        "sentence": "I may write a default constructor to initialize left and right to know and data.",
+        "start": 1815,
+        "end": 1823
+    },
+    {
+        "sentence": "But I don't want to have to use getters and setters.",
+        "start": 1823,
+        "end": 1827
+    },
+    {
+        "sentence": "It just makes my code harder to read.",
+        "start": 1826,
+        "end": 1829
+    },
+    {
+        "sentence": "So I chose to make it a struct.",
+        "start": 1828,
+        "end": 1832
+    },
+    {
+        "sentence": "In general.",
+        "start": 1831,
+        "end": 1833
+    },
+    {
+        "sentence": "I will use a struct when I am just providing structure.",
+        "start": 1832,
+        "end": 1837
+    },
+    {
+        "sentence": "And I will use a class when I want to make it be really in capitalisation.",
+        "start": 1837,
+        "end": 1843
+    },
+    {
+        "sentence": "This is purely style.",
+        "start": 1842,
+        "end": 1846
+    },
+    {
+        "sentence": "As I said early, a struct and class are exactly the same.",
+        "start": 1846,
+        "end": 1852
+    },
+    {
+        "sentence": "The only difference is a struct defaults to public and a class defaults to private.",
+        "start": 1852,
+        "end": 1857
+    },
+    {
+        "sentence": "It's ironic that essentially every programmer I know uses class and the first thing they do is put public at the top.",
+        "start": 1856,
+        "end": 1864
+    },
+    {
+        "sentence": "But it's super, super common.",
+        "start": 1864,
+        "end": 1867
+    },
+    {
+        "sentence": "But it's a good question.",
+        "start": 1866,
+        "end": 1870
+    },
+    {
+        "sentence": "I use structs when I just wanna would all I would have otherwise was getters and setters and no real knowledge?",
+        "start": 1869,
+        "end": 1876
+    },
+    {
+        "sentence": "Yes.",
+        "start": 1875,
+        "end": 1876
+    },
+    {
+        "sentence": "Yep.",
+        "start": 1876,
+        "end": 1879
+    },
+    {
+        "sentence": "In C plus plus 8 struck in a class are exactly the same thing.",
+        "start": 1879,
+        "end": 1884
+    },
+    {
+        "sentence": "The literal only difference is a struct.",
+        "start": 1883,
+        "end": 1888
+    },
+    {
+        "sentence": "Defaults to public and a class defaults to private.",
+        "start": 1887,
+        "end": 1892
+    },
+    {
+        "sentence": "See whole different story.",
+        "start": 1892,
+        "end": 1895
+    },
+    {
+        "sentence": "C has strokes, but they are not the same.",
+        "start": 1894,
+        "end": 1898
+    },
+    {
+        "sentence": "But you could see that they are a subset.",
+        "start": 1898,
+        "end": 1902
+    },
+    {
+        "sentence": "That is to say, as long as you only do see things to them, C plus plus strokes will act like C structs.",
+        "start": 1901,
+        "end": 1909
+    },
+    {
+        "sentence": "It's an interesting question.",
+        "start": 1908,
+        "end": 1911
+    },
+    {
+        "sentence": "Okay, So there is my structure.",
+        "start": 1910,
+        "end": 1915
+    },
+    {
+        "sentence": "And well, here is if I was to 10 time drawing a memory map, I'm never going to do this.",
+        "start": 1914,
+        "end": 1926
+    },
+    {
+        "sentence": "This is a pain.",
+        "start": 1925,
+        "end": 1928
+    },
+    {
+        "sentence": "I'm going to assume that all of you can look at this and see that because these are the same tree.",
+        "start": 1928,
+        "end": 1942
+    },
+    {
+        "sentence": "Here is the theoretical drawing of it.",
+        "start": 1941,
+        "end": 1945
+    },
+    {
+        "sentence": "Here is the memory layout drawing of it.",
+        "start": 1945,
+        "end": 1949
+    },
+    {
+        "sentence": "And that translation should become second nature when you need it.",
+        "start": 1949,
+        "end": 1956
+    },
+    {
+        "sentence": "Now, when you are trying to work out the exact code to do manipulating this thing.",
+        "start": 1956,
+        "end": 1963
+    },
+    {
+        "sentence": "Absolutely, You will draw some of those.",
+        "start": 1962,
+        "end": 1965
+    },
+    {
+        "sentence": "And I expect during the MPs we have with trees, you're going to end up drawing some of those.",
+        "start": 1964,
+        "end": 1973
+    },
+    {
+        "sentence": "And I would have when I was doing them as well.",
+        "start": 1972,
+        "end": 1975
+    },
+    {
+        "sentence": "But I'm going to work in this space.",
+        "start": 1975,
+        "end": 1978
+    },
+    {
+        "sentence": "Is everybody comfortable with that idea that these two are showing the same thing?",
+        "start": 1977,
+        "end": 1983
+    },
+    {
+        "sentence": "I suppose we could argue this one's missing one detail.",
+        "start": 1983,
+        "end": 1990
+    },
+    {
+        "sentence": "It should have somewhere.",
+        "start": 1989,
+        "end": 1992
+    },
+    {
+        "sentence": "And that should be built as they're but they're the same thing.",
+        "start": 1991,
+        "end": 2008
+    },
+    {
+        "sentence": "Okay.",
+        "start": 2007,
+        "end": 2011
+    },
+    {
+        "sentence": "So the next question is, let's do a little bit of warm up on proving things on trees.",
+        "start": 2010,
+        "end": 2020
+    },
+    {
+        "sentence": "This is going to be a simple property and it's going to answer the question of, is this a lot worse than a linked list?",
+        "start": 2019,
+        "end": 2028
+    },
+    {
+        "sentence": "Because our linked list are singly linked list had one pointer for every element.",
+        "start": 2028,
+        "end": 2037
+    },
+    {
+        "sentence": "And here I got a bunch is a bunch of null pointers, right?",
+        "start": 2036,
+        "end": 2042
+    },
+    {
+        "sentence": "So how bad is it?",
+        "start": 2042,
+        "end": 2045
+    },
+    {
+        "sentence": "How many no pointers?",
+        "start": 2045,
+        "end": 2047
+    },
+    {
+        "sentence": "How many sort of useless pointers do I have compared to the amount of data?",
+        "start": 2046,
+        "end": 2054
+    },
+    {
+        "sentence": "What is the overhead that I'm using by using a tree versus using a linked list.",
+        "start": 2054,
+        "end": 2063
+    },
+    {
+        "sentence": "Or the wasteful overhead.",
+        "start": 2062,
+        "end": 2066
+    },
+    {
+        "sentence": "So the question is, I want to have how many no pointers are there?",
+        "start": 2065,
+        "end": 2073
+    },
+    {
+        "sentence": "In a binary tree with n nodes?",
+        "start": 2073,
+        "end": 2078
+    },
+    {
+        "sentence": "Anybody have a guess?",
+        "start": 2078,
+        "end": 2081
+    },
+    {
+        "sentence": "Yeah, n plus 1 is our suggestion.",
+        "start": 2080,
+        "end": 2085
+    },
+    {
+        "sentence": "So I like this one.",
+        "start": 2084,
+        "end": 2088
+    },
+    {
+        "sentence": "N plus one null pointers.",
+        "start": 2087,
+        "end": 2092
+    },
+    {
+        "sentence": "So how are we going to prove this?",
+        "start": 2091,
+        "end": 2094
+    },
+    {
+        "sentence": "Because looking at this picture, I don't immediately go That's n plus 1.",
+        "start": 2094,
+        "end": 2104
+    },
+    {
+        "sentence": "So how do we prove it?",
+        "start": 2103,
+        "end": 2107
+    },
+    {
+        "sentence": "So I'm going to prove this by defining a function.",
+        "start": 2107,
+        "end": 2111
+    },
+    {
+        "sentence": "And I'm going to define what the function is.",
+        "start": 2110,
+        "end": 2114
+    },
+    {
+        "sentence": "And then I'm going to prove the function has a behavior and get what I wanted.",
+        "start": 2114,
+        "end": 2118
+    },
+    {
+        "sentence": "So I'm going to define the function nulls of n is defined as the number of, we can even say max number of null pointers in a tree with n nodes.",
+        "start": 2118,
+        "end": 2149
+    },
+    {
+        "sentence": "So this function is an oracle or a function, right?",
+        "start": 2149,
+        "end": 2154
+    },
+    {
+        "sentence": "It's just right.",
+        "start": 2154,
+        "end": 2156
+    },
+    {
+        "sentence": "It is defined to work that way, right?",
+        "start": 2155,
+        "end": 2159
+    },
+    {
+        "sentence": "So how do I prove?",
+        "start": 2159,
+        "end": 2165
+    },
+    {
+        "sentence": "Yes.",
+        "start": 2165,
+        "end": 2166
+    },
+    {
+        "sentence": "We're going to work through the proof.",
+        "start": 2165,
+        "end": 2171
+    },
+    {
+        "sentence": "I'm sure that many of you have seen the proof.",
+        "start": 2171,
+        "end": 2175
+    },
+    {
+        "sentence": "It's a warm up to get you back in the flow if you've done less theory, absolutely.",
+        "start": 2175,
+        "end": 2180
+    },
+    {
+        "sentence": "I'm sure many of you could walk through the proof right now.",
+        "start": 2179,
+        "end": 2182
+    },
+    {
+        "sentence": "Yes.",
+        "start": 2182,
+        "end": 2183
+    },
+    {
+        "sentence": "Max?",
+        "start": 2182,
+        "end": 2187
+    },
+    {
+        "sentence": "Yes.",
+        "start": 2186,
+        "end": 2187
+    },
+    {
+        "sentence": "It turns out it's actually also the number, but it's going to be easier to describe it by defining it as the maximum number.",
+        "start": 2187,
+        "end": 2195
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2195,
+        "end": 2199
+    },
+    {
+        "sentence": "So we want to do this proof G.",
+        "start": 2198,
+        "end": 2205
+    },
+    {
+        "sentence": "I bet this is going to be an inductive proof.",
+        "start": 2205,
+        "end": 2208
+    },
+    {
+        "sentence": "So one way to start out and to start out when you're trying to prove something that you think is right.",
+        "start": 2208,
+        "end": 2214
+    },
+    {
+        "sentence": "It's always good to generate some base cases.",
+        "start": 2214,
+        "end": 2218
+    },
+    {
+        "sentence": "Not just because you will need them formally for the proof, but working through the base cases helps you see how the function works, how things are functioning.",
+        "start": 2218,
+        "end": 2230
+    },
+    {
+        "sentence": "The actual behavior is.",
+        "start": 2229,
+        "end": 2232
+    },
+    {
+        "sentence": "So let's walk through our base cases.",
+        "start": 2232,
+        "end": 2237
+    },
+    {
+        "sentence": "Knows of 0.",
+        "start": 2236,
+        "end": 2238
+    },
+    {
+        "sentence": "Well, if we have a tree with 0 nodes, how many null pointers are there?",
+        "start": 2238,
+        "end": 2247
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2247,
+        "end": 2249
+    },
+    {
+        "sentence": "Now, we need to realize that a tree with 0 nodes, we still have that root pointer in our data structure.",
+        "start": 2249,
+        "end": 2259
+    },
+    {
+        "sentence": "So a tree with 0 nodes has one null pointer, right?",
+        "start": 2259,
+        "end": 2268
+    },
+    {
+        "sentence": "And that is points it null.",
+        "start": 2267,
+        "end": 2272
+    },
+    {
+        "sentence": "All right, Well, our function we would like to prove is that nulls of n equals n minus 1, or sorry, n plus 1.",
+        "start": 2271,
+        "end": 2295
+    },
+    {
+        "sentence": "You any different things in my head?",
+        "start": 2294,
+        "end": 2300
+    },
+    {
+        "sentence": "Well, as a base case, 0 plus one is one.",
+        "start": 2299,
+        "end": 2305
+    },
+    {
+        "sentence": "Check.",
+        "start": 2304,
+        "end": 2306
+    },
+    {
+        "sentence": "Okay, nulls of one.",
+        "start": 2305,
+        "end": 2312
+    },
+    {
+        "sentence": "How many different trees are there?",
+        "start": 2311,
+        "end": 2313
+    },
+    {
+        "sentence": "Yes.",
+        "start": 2313,
+        "end": 2314
+    },
+    {
+        "sentence": "The root is a node, wrote is a pointer to the root node, right?",
+        "start": 2313,
+        "end": 2325
+    },
+    {
+        "sentence": "So there are 0 nodes.",
+        "start": 2325,
+        "end": 2327
+    },
+    {
+        "sentence": "And that empty tree is initialized, as we said, by initializing the root pointer to null.",
+        "start": 2326,
+        "end": 2335
+    },
+    {
+        "sentence": "So as long as we have no nodes, we have one null pointer and we have no other memory.",
+        "start": 2334,
+        "end": 2340
+    },
+    {
+        "sentence": "When we add one note in that root pointer is no longer null.",
+        "start": 2339,
+        "end": 2346
+    },
+    {
+        "sentence": "And we now have root pointing into a node, right?",
+        "start": 2345,
+        "end": 2352
+    },
+    {
+        "sentence": "Well, that node has two children that are both empty.",
+        "start": 2352,
+        "end": 2360
+    },
+    {
+        "sentence": "And that is the, again, only possible structure for a tree of one node.",
+        "start": 2359,
+        "end": 2367
+    },
+    {
+        "sentence": "And I don't care what the contents are, right?",
+        "start": 2366,
+        "end": 2369
+    },
+    {
+        "sentence": "That node could have anything in its data, does not affect its structure.",
+        "start": 2369,
+        "end": 2376
+    },
+    {
+        "sentence": "So we get two.",
+        "start": 2375,
+        "end": 2379
+    },
+    {
+        "sentence": "And here we get 2.",
+        "start": 2379,
+        "end": 2384
+    },
+    {
+        "sentence": "Well, we have a lot more trees now.",
+        "start": 2383,
+        "end": 2389
+    },
+    {
+        "sentence": "Is it still working?",
+        "start": 2388,
+        "end": 2393
+    },
+    {
+        "sentence": "So let's try and draw all the possible trees of two nodes.",
+        "start": 2392,
+        "end": 2400
+    },
+    {
+        "sentence": "I think that's it.",
+        "start": 2399,
+        "end": 2402
+    },
+    {
+        "sentence": "Is that it though, Let's see.",
+        "start": 2401,
+        "end": 2407
+    },
+    {
+        "sentence": "We have 1, 2, 3 or 1, 2, 3 null pointers, 32 plus one.",
+        "start": 2407,
+        "end": 2419
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2418,
+        "end": 2424
+    },
+    {
+        "sentence": "So I could do another.",
+        "start": 2424,
+        "end": 2427
+    },
+    {
+        "sentence": "Actually, let's do another because it gets trickier.",
+        "start": 2426,
+        "end": 2429
+    },
+    {
+        "sentence": "So here we have three.",
+        "start": 2428,
+        "end": 2435
+    },
+    {
+        "sentence": "There's one tree of three nodes.",
+        "start": 2434,
+        "end": 2438
+    },
+    {
+        "sentence": "Anyone have a suggestion for a different tree of three nodes?",
+        "start": 2438,
+        "end": 2442
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 2442,
+        "end": 2445
+    },
+    {
+        "sentence": "So there's a left child of the root and a left child of the left child.",
+        "start": 2444,
+        "end": 2456
+    },
+    {
+        "sentence": "So okay.",
+        "start": 2455,
+        "end": 2457
+    },
+    {
+        "sentence": "We can have this.",
+        "start": 2457,
+        "end": 2458
+    },
+    {
+        "sentence": "Okay.",
+        "start": 2458,
+        "end": 2461
+    },
+    {
+        "sentence": "What else we got?",
+        "start": 2460,
+        "end": 2465
+    },
+    {
+        "sentence": "Well, I'll give you the mirror immediately, right?",
+        "start": 2464,
+        "end": 2469
+    },
+    {
+        "sentence": "We have this have I drawn all of the possible ones?",
+        "start": 2469,
+        "end": 2474
+    },
+    {
+        "sentence": "They'll know what Yeah.",
+        "start": 2473,
+        "end": 2479
+    },
+    {
+        "sentence": "Yeah.",
+        "start": 2479,
+        "end": 2483
+    },
+    {
+        "sentence": "A left child by a right child.",
+        "start": 2482,
+        "end": 2484
+    },
+    {
+        "sentence": "So we can have this structure as well.",
+        "start": 2484,
+        "end": 2488
+    },
+    {
+        "sentence": "And again, the mirror is that it.",
+        "start": 2487,
+        "end": 2492
+    },
+    {
+        "sentence": "Now we finally covered all of this.",
+        "start": 2492,
+        "end": 2495
+    },
+    {
+        "sentence": "This is going to take us a lot of time if we're going to draw the trees.",
+        "start": 2494,
+        "end": 2497
+    },
+    {
+        "sentence": "I think we've got it.",
+        "start": 2497,
+        "end": 2500
+    },
+    {
+        "sentence": "Now.",
+        "start": 2500,
+        "end": 2500
+    },
+    {
+        "sentence": "I think this is all of the cases of three nodes.",
+        "start": 2500,
+        "end": 2503
+    },
+    {
+        "sentence": "And we get 12341234123412341234.",
+        "start": 2503,
+        "end": 2517
+    },
+    {
+        "sentence": "So it looks like 4, 3 plus 1 equals 4.",
+        "start": 2505,
+        "end": 2521
+    },
+    {
+        "sentence": "So this seems to be working.",
+        "start": 2521,
+        "end": 2524
+    },
+    {
+        "sentence": "But we better figure out an inductive proof because itemizing all the trees in the universe is going to take longer than the rest of the class.",
+        "start": 2523,
+        "end": 2533
+    },
+    {
+        "sentence": "So what is our inductive hypothesis is suppose nulls of n equals n plus 1 for all 0 less than, equal to and less than k would say trees of height nodes.",
+        "start": 2533,
+        "end": 2570
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2569,
+        "end": 2573
+    },
+    {
+        "sentence": "Everybody happy with that?",
+        "start": 2573,
+        "end": 2575
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2575,
+        "end": 2578
+    },
+    {
+        "sentence": "So now we want to cope with our inductive step.",
+        "start": 2578,
+        "end": 2586
+    },
+    {
+        "sentence": "Consider a treaty containing k nodes, right?",
+        "start": 2585,
+        "end": 2590
+    },
+    {
+        "sentence": "So we have a treaty with k node t equals our TL TR, right?",
+        "start": 2589,
+        "end": 2607
+    },
+    {
+        "sentence": "So we're going to have our T l and T r.",
+        "start": 2606,
+        "end": 2616
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2615,
+        "end": 2621
+    },
+    {
+        "sentence": "So what I need to do now, I want to have everything equal to n plus 1.",
+        "start": 2620,
+        "end": 2629
+    },
+    {
+        "sentence": "But I need to figure out a way to count my nodes.",
+        "start": 2629,
+        "end": 2634
+    },
+    {
+        "sentence": "So first of all, I'm going to say how many nodes are in T L?",
+        "start": 2634,
+        "end": 2642
+    },
+    {
+        "sentence": "Well, I'm just going to say that L, T L has YOU nodes where Q is less than K.",
+        "start": 2642,
+        "end": 2662
+    },
+    {
+        "sentence": "Everybody happy with that statement?",
+        "start": 2661,
+        "end": 2665
+    },
+    {
+        "sentence": "It has to be true because the root is at least one nodes.",
+        "start": 2665,
+        "end": 2673
+    },
+    {
+        "sentence": "There must be a node at the root.",
+        "start": 2672,
+        "end": 2675
+    },
+    {
+        "sentence": "Therefore, there could be any number of nodes between 0 and k minus one nodes in TL.",
+        "start": 2674,
+        "end": 2686
+    },
+    {
+        "sentence": "So Knowles in t l equals q plus one by inductive hypothesis.",
+        "start": 2685,
+        "end": 2704
+    },
+    {
+        "sentence": "Right?",
+        "start": 2703,
+        "end": 2705
+    },
+    {
+        "sentence": "All cool.",
+        "start": 2705,
+        "end": 2709
+    },
+    {
+        "sentence": "Doesn't seem to have said much yet.",
+        "start": 2708,
+        "end": 2712
+    },
+    {
+        "sentence": "How many nodes are in T, R, a minus q minus one?",
+        "start": 2711,
+        "end": 2735
+    },
+    {
+        "sentence": "Does everybody see why that's happening?",
+        "start": 2735,
+        "end": 2737
+    },
+    {
+        "sentence": "I like that.",
+        "start": 2737,
+        "end": 2738
+    },
+    {
+        "sentence": "So has k, which is the total number of nodes minus q, which we've defined to be the number of nodes in TL minus one, because there's one in the root.",
+        "start": 2738,
+        "end": 2756
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2756,
+        "end": 2759
+    },
+    {
+        "sentence": "So sense that expression, k minus q minus one is also less than K.",
+        "start": 2758,
+        "end": 2775
+    },
+    {
+        "sentence": "Because the number of nodes we allow in a tree is a natural number.",
+        "start": 2774,
+        "end": 2781
+    },
+    {
+        "sentence": "So there is between 0.",
+        "start": 2781,
+        "end": 2782
+    },
+    {
+        "sentence": "So we're not subtracting anything negative and we're subtracting at least one, which is less, less than k.",
+        "start": 2782,
+        "end": 2795
+    },
+    {
+        "sentence": "Then we can say that the nulls in T r equals k minus q minus 1 plus 1, right?",
+        "start": 2794,
+        "end": 2811
+    },
+    {
+        "sentence": "Okay.",
+        "start": 2811,
+        "end": 2816
+    },
+    {
+        "sentence": "So Knowles of k equals k minus q minus 1 plus 1 plus q plus 1.",
+        "start": 2815,
+        "end": 2833
+    },
+    {
+        "sentence": "Y will cancel, cancel, cancel k plus 1.",
+        "start": 2832,
+        "end": 2838
+    },
+    {
+        "sentence": "Tombstone.",
+        "start": 2838,
+        "end": 2842
+    },
+    {
+        "sentence": "We're done.",
+        "start": 2842,
+        "end": 2843
+    },
+    {
+        "sentence": "Okay?",
+        "start": 2843,
+        "end": 2848
+    },
+    {
+        "sentence": "So overall, the inductions not hard, but what we see is the structure we're going to see again and again and again, that we're taking the tree, we're ripping it apart at the root.",
+        "start": 2848,
+        "end": 2861
+    },
+    {
+        "sentence": "And we're working on our sub trees.",
+        "start": 2860,
+        "end": 2862
+    },
+    {
+        "sentence": "Things that bother people in this.",
+        "start": 2862,
+        "end": 2866
+    },
+    {
+        "sentence": "What if TR is an empty tree?",
+        "start": 2865,
+        "end": 2870
+    },
+    {
+        "sentence": "It's legal, right?",
+        "start": 2869,
+        "end": 2873
+    },
+    {
+        "sentence": "We have no constraint on the structure.",
+        "start": 2873,
+        "end": 2877
+    },
+    {
+        "sentence": "This doesn't have to be complete or a perfect tree.",
+        "start": 2876,
+        "end": 2879
+    },
+    {
+        "sentence": "It'll work for those.",
+        "start": 2879,
+        "end": 2881
+    },
+    {
+        "sentence": "If TR is an empty tree, it's got 0 nodes, so it has one null pointer.",
+        "start": 2880,
+        "end": 2890
+    },
+    {
+        "sentence": "Well, that's okay.",
+        "start": 2889,
+        "end": 2892
+    },
+    {
+        "sentence": "We are charging the pointers that point out of the node to the subtree, much like that root pointer that existed pointing at r was charged to the existence of the tree at all.",
+        "start": 2891,
+        "end": 2910
+    },
+    {
+        "sentence": "So again, our base case here is a empty tree.",
+        "start": 2909,
+        "end": 2917
+    },
+    {
+        "sentence": "And in the case of an empty tree, so if we had one node, this tree is empty, That's tree is empty.",
+        "start": 2916,
+        "end": 2924
+    },
+    {
+        "sentence": "All this math still holds.",
+        "start": 2924,
+        "end": 2926
+    },
+    {
+        "sentence": "Just m equals 0 in both cases.",
+        "start": 2926,
+        "end": 2929
+    },
+    {
+        "sentence": "0 says, Whoa, we have one null and we get the two nulls we expected.",
+        "start": 2929,
+        "end": 2935
+    },
+    {
+        "sentence": "So I think as I said, there are sort of two important things to remember about this proof.",
+        "start": 2935,
+        "end": 2945
+    },
+    {
+        "sentence": "The actual content, you know, it's neat to see.",
+        "start": 2945,
+        "end": 2948
+    },
+    {
+        "sentence": "One.",
+        "start": 2947,
+        "end": 2950
+    },
+    {
+        "sentence": "The way we break a tree down by ripping it into trees that we know only hold the minimal properties we needed.",
+        "start": 2949,
+        "end": 2959
+    },
+    {
+        "sentence": "We only know these are binary trees with a number of nodes.",
+        "start": 2958,
+        "end": 2962
+    },
+    {
+        "sentence": "Two.",
+        "start": 2962,
+        "end": 2964
+    },
+    {
+        "sentence": "We can move where we charge things that I could have tried to do this proof it in fact, you can make them prove work.",
+        "start": 2964,
+        "end": 2973
+    },
+    {
+        "sentence": "It gets more complicated by charging the nulls to the node that has them.",
+        "start": 2972,
+        "end": 2978
+    },
+    {
+        "sentence": "But we're charging them to the tree that they belong to.",
+        "start": 2978,
+        "end": 2982
+    },
+    {
+        "sentence": "On Wednesday.",
+        "start": 2981,
+        "end": 2985
+    },
+    {
+        "sentence": "On Wednesday, today is Wednesday, right?",
+        "start": 2984,
+        "end": 2987
+    },
+    {
+        "sentence": "On Friday.",
+        "start": 2987,
+        "end": 2988
+    },
+    {
+        "sentence": "We'll talk about actually doing something more useful with trees.",
+        "start": 2988,
+        "end": 2993
+    },
+    {
+        "sentence": "We're done with the idea of trees.",
+        "start": 2993,
+        "end": 2996
+    },
+    {
+        "sentence": "And let's talk about trees that are helpful to us.",
+        "start": 2996,
+        "end": 2999
+    },
+    {
+        "sentence": "Have a nice day.",
+        "start": 2999,
+        "end": 3001
+    }
+]

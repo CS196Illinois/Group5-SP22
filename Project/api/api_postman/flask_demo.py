@@ -127,9 +127,9 @@ def home():
 <p>A prototype API for distant reading of science fiction novels.</p>'''
 
 
-@app.route('/api/v1/resources/books/all', methods=['GET'])
-def api_all():
-    return jsonify(data)
+# @app.route('/api/v1/resources/books/all', methods=['GET'])
+# def api_all():
+    # return jsonify(data)
 
 
 # @app.route('/api/v1/resources/books', methods=['GET'])

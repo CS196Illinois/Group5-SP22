@@ -24,7 +24,6 @@ def preprocess_data(obj):
     """
     Preprocess transcript data. 
     :param obj The transcript file.
-
     Data format is as follows:
         {
             "i": 0,         The index of the word entry.
@@ -34,14 +33,12 @@ def preprocess_data(obj):
             "t": "word",    The type of transcript entry. I am not sure of types other than word.
             "a": 56         I do not know what this is.
         },
-
     This function parses a json file into sentences and returns data in the following format:
         {
             "sentence": "This is the sentence spoken.",
             "start"   : 265340,
             "end"     : 269340
         }
-
     """
 
     data = []
@@ -107,24 +104,29 @@ def upload_file():
     </form>
     '''
 
-# def processfile():
-    # step 1: accept input json
-    # step 2: call preprocess data
-    # step 3: return preprocessed data as json
+@app.route('/search/<filename>/<query>', methods=['GET','POST'])
+def search_file(query):
+    #  use the search function from SearchEngine.py to search for the 
+    # input phrase in the transcript file with the given filename.
 
-# Opening JSON file
-# f = open(r'./uploads/MATH%20257%20-%20Module%206%20-%20Matrix%20Vector%20Multiplication.json')
- 
-# returns JSON object as a dictionary
-# data = json.load(f)
+    res = search(f'./uploads/{filename}.json', query)
+    return jsonify(res)
 
-# Closing file
-# f.close()
+  
+
 
 @app.route('/', methods=['GET'])
 def home():
-    return '''<h1>Distant Reading Archive</h1>
-<p>A prototype API for distant reading of science fiction novels.</p>'''
+    return '''
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1>MediaSpace Searcher</h1>
+
+    </body>
+    </html>
+    '''
 
 
 # @app.route('/api/v1/resources/books/all', methods=['GET'])

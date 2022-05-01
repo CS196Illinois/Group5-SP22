@@ -62,8 +62,3 @@ def search(path_to_file: str, q: str, num_results: int=1):
 
     except:
         raise FileNotFoundError("File not found")
-
-
-if __name__ == "__main__":
-    search("./225.json", "node", 2)
-
